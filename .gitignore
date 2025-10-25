@@ -1,3 +1,5 @@
+# Exclude Angular local node binaries
+frontend/src/main/angular/node/
 # Global ignores for Secure Web App (backend + frontend)
 
 # Maven/Java (backend)
