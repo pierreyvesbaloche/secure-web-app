@@ -1,0 +1,66 @@
+# Global ignores for Secure Web App (backend + frontend)
+
+# Maven/Java (backend)
+/backend/target/
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+/backend/.idea/
+
+# Node/Angular (frontend)
+/frontend/src/main/angular/node_modules/
+/frontend/src/main/angular/dist/
+/frontend/src/main/angular/.angular/
+/frontend/src/main/angular/tmp/
+/frontend/src/main/angular/out-tsc/
+/frontend/src/main/angular/bazel-out/
+/frontend/src/main/angular/npm-debug.log
+/frontend/src/main/angular/yarn-error.log
+/frontend/src/main/angular/.vscode/
+/frontend/src/main/angular/.history/
+/frontend/src/main/angular/.idea/
+/frontend/src/main/angular/.project
+/frontend/src/main/angular/.settings/
+/frontend/src/main/angular/.sublime-workspace
+/frontend/src/main/angular/.c9/
+/frontend/src/main/angular/.DS_Store
+/frontend/src/main/angular/Thumbs.db
+/frontend/src/main/angular/coverage/
+/frontend/src/main/angular/testem.log
+/frontend/src/main/angular/libpeerconnection.log
+/frontend/src/main/angular/__screenshots__/
+/frontend/src/main/angular/playwright-report/
+/frontend/src/main/angular/test-results/
+
+# OS/Editor files
+*.swp
+*.swo
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Sensitive files
+.env
+.env.local
+.env.*.local
+
+# Ignore IDE config except recommended settings
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Ignore coverage and build output
+coverage/
+dist/
+
+# Ignore generated jar
+/frontend/target/*.jar
+
+# Misc
+/.angular/cache
+
