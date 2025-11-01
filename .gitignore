@@ -38,6 +38,7 @@ frontend/src/main/angular/node/
 *.swp
 *.swo
 *.bak
+*.code-workspace
 *.tmp
 .DS_Store
 Thumbs.db

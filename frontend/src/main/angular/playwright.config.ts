@@ -28,15 +28,18 @@ export default defineConfig({
   ],
   webServer: [
     {
-      command: 'mvn spring-boot:run',
-      url: 'http://localhost:8080',
+      command: 'mvn -f ../../../../backend/pom.xml spring-boot:run',
+      url: 'http://localhost:8080/api/healthcheck',
       reuseExistingServer: !process.env.CI,
-      cwd: '../../backend',
+      //cwd: '../../backend',
     },
     {
       command: 'npm run start',
       url: 'http://localhost:4200',
       reuseExistingServer: !process.env.CI,
+      // cwd: '',
+      stderr: "pipe",
+      stdout: "pipe",
     },
   ],
   globalTimeout: 600000, // 10 minutes
