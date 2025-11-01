@@ -1,6 +1,7 @@
 package com.example.securewebapp.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -23,6 +24,7 @@ public class AuthenticationController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
+    @Qualifier("userDetailsService")
     private UserDetailsService userDetailsService;
 
     @Autowired
