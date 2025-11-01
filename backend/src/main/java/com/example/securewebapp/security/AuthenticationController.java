@@ -46,9 +46,10 @@ public class AuthenticationController {
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
     final String token = jwtTokenUtil.generateToken(userDetails.getUsername());
 
-        Map<String, String> response = new HashMap<>();
-        response.put("token", token);
-        return ResponseEntity.ok(response);
+    Map<String, String> response = new HashMap<>();
+    response.put("token", token);
+    response.put("username", authenticationRequest.getUsername());
+    return ResponseEntity.ok(response);
     }
 
     public static class AuthenticationRequest {

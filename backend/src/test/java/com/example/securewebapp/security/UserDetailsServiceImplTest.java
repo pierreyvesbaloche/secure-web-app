@@ -3,6 +3,7 @@ package com.example.securewebapp.security;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +18,15 @@ class UserDetailsServiceImplTest {
 
     @Test
     void loadUserByUsername_returnsUser_whenUserExists() {
-        // Ensure test data is present
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         UserDetails user = service.loadUserByUsername("user");
         assertEquals("user", user.getUsername());
-        assertEquals("password", user.getPassword());
+        assertTrue(encoder.matches("password", user.getPassword()));
         assertTrue(user.getAuthorities().isEmpty());
 
         UserDetails admin = service.loadUserByUsername("admin");
         assertEquals("admin", admin.getUsername());
-        assertEquals("adminpass", admin.getPassword());
+        assertTrue(encoder.matches("adminpass", admin.getPassword()));
         assertTrue(admin.getAuthorities().isEmpty());
     }
 
