@@ -20,8 +20,8 @@ class HealthCheckControllerTest {
 
     @Test
     void healthcheckEndpointShouldReturn200AndUtcTime() throws Exception {
-    mockMvc.perform(get("/api/healthcheck"))
-        .andExpect(status().isOk())
-        .andExpect(content().string((org.hamcrest.Matcher<? super String>) org.hamcrest.Matchers.containsString("UTC")));
+        mockMvc.perform(get("/api/healthcheck"))
+            .andExpect(status().isOk())
+            .andExpect(content().string((org.hamcrest.Matcher<? super String>) org.hamcrest.Matchers.endsWith("Z\"}")));
     }
 }

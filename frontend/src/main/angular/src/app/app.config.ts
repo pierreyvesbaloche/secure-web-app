@@ -4,10 +4,12 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { routes } from './app.routes';
 import { jwtInterceptor } from './auth/jwt.interceptor';
+// ...existing code...
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideHttpClient(withInterceptors([jwtInterceptor]))
-  ]
+  ],
+  // declarations removed; handled in app.module.ts
 };
