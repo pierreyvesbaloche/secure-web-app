@@ -43,7 +43,7 @@ export class LoginComponent {
       
       this.authService.login(this.loginForm.value).subscribe({
         next: () => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/welcome']);
         },
         error: (error) => {
           this.error = error.message || 'An error occurred during login';
