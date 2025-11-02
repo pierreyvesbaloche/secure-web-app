@@ -98,7 +98,7 @@ describe('LoginComponent', () => {
       username: 'testuser',
       password: 'testpass'
     });
-    expect(router.navigate).toHaveBeenCalledWith(['/']);
+    expect(router.navigate).toHaveBeenCalledWith(['/welcome']);
     expect(component.error).toBeNull();
   });
 
