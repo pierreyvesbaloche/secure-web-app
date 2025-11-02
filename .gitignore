@@ -10,6 +10,7 @@ frontend/src/main/angular/node/
 /backend/.idea/
 
 # Node/Angular (frontend)
+/frontend/node_modules/
 /frontend/src/main/angular/node_modules/
 /frontend/src/main/angular/dist/
 /frontend/src/main/angular/.angular/
