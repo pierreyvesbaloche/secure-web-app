@@ -31,13 +31,11 @@ export default defineConfig({
       command: 'mvn -f ../../../../backend/pom.xml spring-boot:run',
       url: 'http://localhost:8080/api/healthcheck',
       reuseExistingServer: !process.env.CI,
-      //cwd: '../../backend',
     },
     {
       command: 'npm run start',
       url: 'http://localhost:4200',
       reuseExistingServer: !process.env.CI,
-      // cwd: '',
       stderr: "pipe",
       stdout: "pipe",
     },
