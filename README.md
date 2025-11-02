@@ -40,6 +40,7 @@ A modern, secure web application built with Spring Boot 3 and Angular, featuring
 ## Data Storage
 
 The application uses PostgreSQL as the primary database, chosen for:
+
 - Strong ACID compliance
 - Rich feature set
 - Excellent performance
@@ -61,6 +62,7 @@ The application uses PostgreSQL as the primary database, chosen for:
 ### Frontend Setup
 
 1. Install dependencies:
+
    ```bash
    cd frontend/src/main/angular
    npm install
@@ -72,12 +74,14 @@ The application uses PostgreSQL as the primary database, chosen for:
    ```
 
 The application will be available at:
+
 - Frontend: http://localhost:4200
 - Backend API: http://localhost:8080
 
 ## Security Implementation
 
 ### Backend Security
+
 - JWT-based authentication
 - Password encryption using BCrypt
 - Role-based authorization
@@ -88,6 +92,7 @@ The application will be available at:
 - Secure headers
 
 ### Frontend Security
+
 - HttpOnly cookies
 - XSS prevention
 - CSRF tokens

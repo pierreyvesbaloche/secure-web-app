@@ -10,7 +10,7 @@ describe('AuthService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [AuthService]
+      providers: [AuthService],
     });
 
     service = TestBed.inject(AuthService);
@@ -29,17 +29,17 @@ describe('AuthService', () => {
   describe('login', () => {
     const loginRequest: LoginRequest = {
       username: 'testuser',
-      password: 'testpass'
+      password: 'testpass',
     };
 
     const loginResponse: LoginResponse = {
       token: 'test-token',
       type: 'Bearer',
-      username: 'testuser'
+      username: 'testuser',
     };
 
     it('should send login request and store token', () => {
-      service.login(loginRequest).subscribe(response => {
+      service.login(loginRequest).subscribe((response) => {
         expect(response).toEqual(loginResponse);
         expect(localStorage.getItem('auth_token')).toBe(loginResponse.token);
         expect(localStorage.getItem('username')).toBe(loginResponse.username);
@@ -54,11 +54,11 @@ describe('AuthService', () => {
 
     it('should handle login error', () => {
       service.login(loginRequest).subscribe({
-        error: error => {
+        error: (error) => {
           expect(error.status).toBe(401);
           expect(localStorage.getItem('auth_token')).toBeNull();
           expect(localStorage.getItem('username')).toBeNull();
-        }
+        },
       });
 
       const req = httpMock.expectOne('http://localhost:8080/api/auth/login');

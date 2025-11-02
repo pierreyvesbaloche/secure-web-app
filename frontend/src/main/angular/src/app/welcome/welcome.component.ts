@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.scss']
+  styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent {
   username: string | null = localStorage.getItem('username');

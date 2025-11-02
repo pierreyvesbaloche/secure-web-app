@@ -1,8 +1,10 @@
-import 'jest-preset-angular/setup-jest';
+import { setupZoneTestEnv } from 'jest-preset-angular/setup-env/zone';
 
-// Mock window.matchMedia
-Object.defineProperty(window, 'matchMedia', {
-  value: jest.fn().mockImplementation(query => ({
+setupZoneTestEnv();
+
+// Mock globalThis.matchMedia
+Object.defineProperty(globalThis, 'matchMedia', {
+  value: jest.fn().mockImplementation((query: string) => ({
     matches: false,
     media: query,
     onchange: null,
