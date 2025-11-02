@@ -36,8 +36,8 @@ export default defineConfig({
       command: 'npm run start',
       url: 'http://localhost:4200',
       reuseExistingServer: !process.env.CI,
-      stderr: "pipe",
-      stdout: "pipe",
+      stderr: 'pipe',
+      stdout: 'pipe',
     },
   ],
   globalTimeout: 600000, // 10 minutes

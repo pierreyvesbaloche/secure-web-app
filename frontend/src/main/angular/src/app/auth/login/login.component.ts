@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -20,11 +20,11 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required]],
     });
   }
 
@@ -40,7 +40,7 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.isLoading = true;
       this.error = null;
-      
+
       this.authService.login(this.loginForm.value).subscribe({
         next: () => {
           this.router.navigate(['/welcome']);
@@ -48,7 +48,7 @@ export class LoginComponent {
         error: (error) => {
           this.error = error.message || 'An error occurred during login';
           this.isLoading = false;
-        }
+        },
       });
     }
   }

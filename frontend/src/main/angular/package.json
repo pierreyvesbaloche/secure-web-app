@@ -2,14 +2,14 @@
   "name": "secure-web-app",
   "version": "0.0.0",
   "scripts": {
-  "ng": "ng",
-  "start": "ng serve",
-  "build": "ng build",
-  "watch": "ng build --watch --configuration development",
-  "test": "jest",
-  "test:watch": "jest --watch",
-  "test:e2e": "playwright test",
-  "test:e2e:ui": "playwright test --ui"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "prettier": {
     "printWidth": 100,

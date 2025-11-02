@@ -16,23 +16,19 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     const authSpy = {
-      login: jest.fn()
+      login: jest.fn(),
     } as unknown as jest.Mocked<AuthService>;
-    
+
     const routerSpy = {
-      navigate: jest.fn()
+      navigate: jest.fn(),
     } as unknown as jest.Mocked<Router>;
 
     await TestBed.configureTestingModule({
-      imports: [
-        ReactiveFormsModule,
-        BrowserAnimationsModule,
-        LoginComponent
-      ],
+      imports: [ReactiveFormsModule, BrowserAnimationsModule, LoginComponent],
       providers: [
         { provide: AuthService, useValue: authSpy },
-        { provide: Router, useValue: routerSpy }
-      ]
+        { provide: Router, useValue: routerSpy },
+      ],
     }).compileComponents();
 
     authService = TestBed.inject(AuthService) as jest.Mocked<AuthService>;
@@ -73,7 +69,7 @@ describe('LoginComponent', () => {
 
     component.loginForm.patchValue({
       username: 'testuser',
-      password: 'testpass'
+      password: 'testpass',
     });
     fixture.detectChanges();
 
@@ -84,19 +80,19 @@ describe('LoginComponent', () => {
     const loginResponse = {
       token: 'test-token',
       type: 'Bearer',
-      username: 'testuser'
+      username: 'testuser',
     };
     authService.login.mockReturnValue(of(loginResponse));
 
     component.loginForm.patchValue({
       username: 'testuser',
-      password: 'testpass'
+      password: 'testpass',
     });
     component.onSubmit();
 
     expect(authService.login).toHaveBeenCalledWith({
       username: 'testuser',
-      password: 'testpass'
+      password: 'testpass',
     });
     expect(router.navigate).toHaveBeenCalledWith(['/welcome']);
     expect(component.error).toBeNull();
@@ -108,7 +104,7 @@ describe('LoginComponent', () => {
 
     component.loginForm.patchValue({
       username: 'testuser',
-      password: 'wrongpass'
+      password: 'wrongpass',
     });
     component.onSubmit();
     fixture.detectChanges();
@@ -119,15 +115,17 @@ describe('LoginComponent', () => {
   });
 
   it('should show loading state during login', () => {
-    authService.login.mockReturnValue(of({
-      token: 'test-token',
-      type: 'Bearer',
-      username: 'testuser'
-    }));
+    authService.login.mockReturnValue(
+      of({
+        token: 'test-token',
+        type: 'Bearer',
+        username: 'testuser',
+      }),
+    );
 
     component.loginForm.patchValue({
       username: 'testuser',
-      password: 'testpass'
+      password: 'testpass',
     });
 
     expect(component.isLoading).toBeFalsy();
