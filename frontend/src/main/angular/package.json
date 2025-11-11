@@ -42,7 +42,7 @@
     "@angular/animations": "^20.0.0",
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
-    "@playwright/test": "^1.43.0",
+    "@playwright/test": "^1.56.1",
     "@testing-library/angular": "^14",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
